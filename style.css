@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap');
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  background-color: hsl(30, 54%, 90%);
+  color: hsl(30, 10%, 34%);
+  padding: 90px 0;
+}
+
+p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 640px;
+  padding: 36px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 24px;
+}
+
+img,
+.prep {
+  border-radius: 12px;
+}
+
+hr {
+  color: hsl(30, 18%, 87%);
+  border-width: 1px 0px 0px 0px;
+  margin: 32px 0;
+}
+
+h1,
+h2 {
+  font-family: "Young Serif";
+  font-weight: 400;
+  color: hsl(24, 5%, 18%);
+}
+
+.prep {
+  padding: 6px 28px 16px;
+  margin: 32px 0;
+  background-color: hsl(330, 100%, 98%);
+}
+
+.table {
+  margin-top: 20px;
+}
+
+.table div {
+  display: flex;
+  padding-left: 32px;
+}
+
+.table p {
+  flex: 1;
+}
+
+.table hr {
+  margin: 12px 0
+}
+
+.bold {
+  font-weight: 700;
+}
+
+h2,
+.brown {
+  color: hsl(14, 45%, 36%);
+}
+
+ul li::before {
+  content: "• ";
+}
+
+ol li::before {
+  content: counter(ordered) ".";
+  counter-increment: ordered;
+}
+
+h3,
+.rose li::before {
+  color: hsl(332, 51%, 32%);
+}
+
+li::before {
+  font-weight: 700;
+  color: hsl(14, 45%, 36%);
+  margin-left: 6px;
+  margin-top: 3px;
+  position: absolute;
+}
+
+ul,
+ol {
+  counter-reset: ordered;
+  list-style-type: none;
+  padding: 0;
+  margin: 0
+}
+
+li p {
+  padding-left: 36px;
+  margin: 12px 0;
+}
