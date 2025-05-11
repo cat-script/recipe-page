@@ -4,34 +4,32 @@
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-* {
   margin: 0;
 }
 
-html {
-  height: 100%;
+:root {
+  --stone-100: hsl(30, 54%, 90%);
+  --stone-150: hsl(30, 18%, 87%);
+  --stone-600: hsl(30, 10%, 34%);
+  --stone-900: hsl(24, 5%, 18%);
+  --brown-800: hsl(14, 45%, 36%);
+  --rose-800: hsl(332, 51%, 32%);
+  --rose-50: hsl(330, 100%, 98%);
+  --font-heading: "Young Serif", sans-serif;
+  --font-text: "Outfit", sans-serif;
+  --fw-n: 400;
+  --fw-m: 600;
+  --fw-b: 700;
 }
 
 body {
   min-height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-family: "Outfit", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5;
-  background-color: hsl(30, 54%, 90%);
-  color: hsl(30, 10%, 34%);
-  padding: 120px 0;
-}
-
-main {
-  max-width: 735px;
-  padding: 40px;
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 24px;
+  background-color: var(--stone-100);
+  color: var(--stone-600);
+  font-weight: var(--fw-n);
 }
 
 img {
@@ -39,160 +37,159 @@ img {
   max-width: 100%;
 }
 
-img,
-.prep {
+.rounded-corner {
   border-radius: 12px;
 }
 
-hr {
-  color: hsl(30, 18%, 87%);
-  border-width: 1px 0px 0px 0px;
-  margin: 26px 0;
+.main {
+  margin: 7.5rem auto;
+  max-width: 46rem;
+  padding: 2.5rem;
+  background-color: white;
+  border-radius: 24px;
 }
 
-hr.taller {
-  margin-top: 30px;
+[class*="heading"] {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-n);
 }
 
-h1,
-h2 {
-  font-family: "Young Serif";
-  font-weight: 400;
-  color: hsl(24, 5%, 18%);
+.main-heading {
+  color: var(--stone-900);
+  font-size: 2.5rem;
+  margin: 0.75em 0 0.35em;
 }
 
-h2,
-.brown {
-  color: hsl(14, 45%, 36%);
+.description {
+  margin-bottom: 32px;
 }
 
-.prep h2,
-.rose li::before {
-  color: hsl(332, 51%, 32%);
+.sub-heading {
+  color: var(--brown-800);
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
 }
 
-h1 {
-  margin: 30px 0 14px;
-  font-size: 40px;
+.preparation .sub-heading {
+  font-family: var(--font-text);
+  font-size: 1.25rem;
+  margin: 8px 0 12px;
 }
 
-h2 {
-  font-size: 28px;
-  margin: 27px 0 12px;
-}
-
-.nutrition h2 {
-  margin-bottom: 14px;
-}
-
-.prep h2 {
-  font-family: inherit;
-  font-size: 20px;
-  font-weight: 600;
-  margin: 8px 0;
-}
-
-.prep {
+.preparation {
   padding: 14px 28px 22px;
-  margin: 32px 0px 24px;
-  background-color: hsl(330, 100%, 98%);
+  background-color: var(--rose-50);
+  margin-bottom: 20px;
 }
 
-.table {
-  margin-top: 22px;
+[class*="rose"] li::before,
+.sub-heading.rose {
+  font-weight: var(--fw-m);
+  color: var(--rose-800);
 }
 
-.table div {
-  display: flex;
-  padding: 0px 12px 0px 30px;
+[class*="brown"] li::before,
+.nutrition .brown {
+  color: var(--brown-800);
 }
 
-.table p {
-  flex-basis: 50%;
-  flex: 1;
+.nutrition.table {
+  margin-top: 24px;
 }
 
-.table hr {
-  margin: 12px 0;
+.nutrition.table .flex {
+  border-bottom: 1px solid var(--stone-150);
+  padding: 12px 12px 11px 32px;
 }
 
-.bold {
-  font-weight: 700;
+.nutrition.table .flex:last-child {
+  border: none;
+  padding-bottom: 0;
 }
 
-ul li::before {
-  content: "• ";
+.nutrition.table .flex:first-child {
+  padding-top: 0;
 }
 
-ol li::before {
-  content: counter(ordered) ".";
-  counter-increment: ordered;
+.nutrition.table p {
+  width: 50%;
 }
 
-li::before {
-  font-weight: 700;
-  color: hsl(14, 45%, 36%);
-  min-width: 33px;
-}
-
-ul,
-ol {
-  counter-reset: ordered;
-  list-style-type: none;
-  padding: 0;
-  margin-left: 7px;
-}
-
-ol {
-  padding-top: 4px;
-}
-
-ul p {
-  margin: 4px 0;
-}
-
-li {
+li,
+.flex {
   display: flex;
   align-items: center;
 }
 
-ol li {
-  align-items: flex-start;
-  margin-bottom: 8px;
+.bold,
+li::before {
+  font-weight: var(--fw-b);
 }
 
-@media (max-width: 500px) {
-  body {
-    padding: 0;
-  }
+li::before {
+  min-width: 33px;
+}
 
-  main {
+.bullet li::before {
+  content: "• ";
+}
+
+.ordered li::before {
+  content: counter(ordered) ".";
+  counter-increment: ordered;
+}
+
+.bullet,
+.ordered {
+  counter-reset: ordered;
+  padding: 0;
+}
+
+.ordered li:last-child,
+.bullet li:last-child {
+  padding-bottom: 4px;
+}
+
+.ordered li {
+  align-items: flex-start;
+  margin: 0 0 8px 8px;
+}
+
+.bullet li {
+  margin: 0 0 8px 7px;
+}
+
+.top-rule {
+  padding-top: 27px;
+  border-top: 1px solid var(--stone-150);
+  margin-top: 27px;
+}
+
+@media screen and (max-width: 46rem) {
+  .main {
     margin: 0;
     border-radius: 0;
     padding: 0;
   }
 
-  img {
+  .content {
+    padding: 2.5rem 0;
+    width: 82%;
+    margin: 0 auto;
+  }
+
+  img.rounded-corner {
     border-radius: 0;
   }
 
-  .content {
-    padding: 40px 32px;
-  }
-
-  h1 {
-    margin: 0 0 24px;
+  .main-heading {
+    margin: 0 0 1.5rem;
     line-height: 1;
-    font-size: 36px;
+    font-size: 2.25rem;
   }
 
-  .prep {
-    padding: 10px 24px 18px;
+  .preparation {
+    padding: 10px 24px 14px;
     margin: 32px 0px 24px;
-    background-color: hsl(330, 100%, 98%);
-  }
-
-  .nutrition h2 {
-    margin-bottom: 16px;
   }
 }
