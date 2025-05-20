@@ -94,6 +94,7 @@ img {
 }
 
 .nutrition.table {
+  width: 100%;
   margin-top: 24px;
 }
 
@@ -111,7 +112,7 @@ img {
   padding-top: 0;
 }
 
-.nutrition.table p {
+td {
   width: 50%;
 }
 
